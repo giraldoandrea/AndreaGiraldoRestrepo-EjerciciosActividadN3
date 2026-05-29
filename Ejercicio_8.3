@@ -1,0 +1,639 @@
+public class Ejercicio8ResueltoN8{
+    
+    public static void main(String[] args) {
+        VentanaPrincipal miVentanaPrincipal = new VentanaPrincipal ();
+        miVentanaPrincipal.setVisible(true);
+        miVentanaPrincipal.setResizable(false);
+    }
+            
+    
+}
+
+ublic class FiguraGeométrica {
+    private double volumen;
+    private double superficie;
+    
+    public void setVolumen(double volumen) {
+        this.volumen = volumen;
+    }
+    
+    public void setSuperficie(double superficie) {
+        this.superficie = superficie;
+    }
+
+    public double getVolumen() {    
+        return this.volumen;
+    }
+
+    public double getSuperficie() {    
+        return this.superficie;
+    }
+
+public class VentanaPrincipal extends javax.swing.JFrame {
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
+
+    /**
+     * Creates new form VentanaPrincipal
+     */
+    public VentanaPrincipal() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        cilindro = new javax.swing.JButton();
+        esfera = new javax.swing.JButton();
+        piramide = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Figuras");
+        setResizable(false);
+        setSize(new java.awt.Dimension(350, 160));
+
+        cilindro.setText("Cilindro");
+        cilindro.addActionListener(this::cilindroActionPerformed);
+
+        esfera.setText("Esfera");
+        esfera.addActionListener(this::esferaActionPerformed);
+
+        piramide.setText("Piramide");
+        piramide.addActionListener(this::piramideActionPerformed);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(cilindro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(esfera)
+                .addGap(57, 57, 57)
+                .addComponent(piramide)
+                .addGap(22, 22, 22))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cilindro)
+                    .addComponent(esfera)
+                    .addComponent(piramide))
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void cilindroActionPerformed(java.awt.event.ActionEvent evt) {                                         
+
+        VentanaCilindro miVentanaCilindro = new VentanaCilindro ();
+        miVentanaCilindro.setVisible(true);
+        miVentanaCilindro.setResizable(false);
+        
+    }                                        
+
+    private void esferaActionPerformed(java.awt.event.ActionEvent evt) {                                       
+      
+        VentanaEsfera miVentanaEsfera = new VentanaEsfera ();
+        miVentanaEsfera.setVisible(true);
+        miVentanaEsfera.setResizable(false);
+    }                                      
+
+    private void piramideActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+        VentanaPiramide miVentanaPiramide = new VentanaPiramide ();
+        miVentanaPiramide.setVisible(true);
+        miVentanaPiramide.setResizable(false);
+    }                                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new VentanaPrincipal().setVisible(true));
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton cilindro;
+    private javax.swing.JButton esfera;
+    private javax.swing.JButton piramide;
+    // End of variables declaration                   
+}
+
+import javax.swing.JOptionPane;
+
+
+public class VentanaPiramide extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPiramide.class.getName());
+
+    public VentanaPiramide() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jToggleButton1 = new javax.swing.JToggleButton();
+        base = new javax.swing.JLabel();
+        altura = new javax.swing.JLabel();
+        apotema = new javax.swing.JLabel();
+        campoBase = new javax.swing.JTextField();
+        campoAltura = new javax.swing.JTextField();
+        campoApotema = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+        volumen = new javax.swing.JLabel();
+        superficie = new javax.swing.JLabel();
+
+        jToggleButton1.setText("jToggleButton1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Piramide");
+
+        base.setText("Base");
+
+        altura.setText("Altura");
+
+        apotema.setText("Apotema");
+
+        calcular.setText("Calcular");
+
+        volumen.setText("jLabel4");
+
+        superficie.setText("jLabel5");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(superficie, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volumen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apotema, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(base, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(campoAltura, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(campoBase, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(campoApotema, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(base)
+                    .addComponent(campoBase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(altura)
+                    .addComponent(campoAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(apotema)
+                    .addComponent(campoApotema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(calcular)
+                .addGap(18, 18, 18)
+                .addComponent(volumen)
+                .addGap(18, 18, 18)
+                .addComponent(superficie)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+     
+    /**
+      * 
+      * @param args the command line arguments
+      */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new VentanaPiramide().setVisible(true));
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel altura;
+    private javax.swing.JLabel apotema;
+    private javax.swing.JLabel base;
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoAltura;
+    private javax.swing.JTextField campoApotema;
+    private javax.swing.JTextField campoBase;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration                   
+}
+
+import javax.swing.JOptionPane;
+
+    void setResizable(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
+public class VentanaEsfera extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaEsfera.class.getName());
+
+    /**
+     * Creates new form VentanaEsfera
+     */
+    public VentanaEsfera() {
+        initComponents();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        radio = new javax.swing.JLabel();
+        campoRadio = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+        volumen = new javax.swing.JLabel();
+        superficie = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Esfera");
+
+        radio.setText("jLabel1");
+
+        campoRadio.addActionListener(this::campoRadioActionPerformed);
+
+        calcular.setText("Calcular");
+        calcular.addActionListener(this::calcularActionPerformed);
+
+        volumen.setText("jLabel2");
+
+        superficie.setText("jLabel3");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                            .addComponent(campoRadio)))
+                    .addComponent(superficie, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volumen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radio)
+                    .addComponent(campoRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(calcular)
+                .addGap(34, 34, 34)
+                .addComponent(volumen)
+                .addGap(18, 18, 18)
+                .addComponent(superficie)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void campoRadioActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+    }                                          
+
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        boolean error = false;
+        try {
+            double radio  = Double.parseDouble(campoRadio.getText());
+            Esfera esfera = new Esfera(radio);
+            volumen.setText("Volumen (cm3): " + String.format("%.2f", esfera.calcularVolumen())); 
+            superficie.setText("Superficie (cm2): " + String.format("%.2f",esfera.calcularSuperficie()));
+        } 
+        catch (Exception e) {
+            error = true; 
+        } 
+        finally {
+            if(error) { 
+                JOptionPane.showMessageDialog(null,"Campo nulo o error en formato de número","Error", JOptionPane.ERROR_MESSAGE);
+                }
+        }
+}
+
+
+ 
+    }                                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new VentanaEsfera().setVisible(true));
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoRadio;
+    private javax.swing.JLabel radio;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration      
+}
+
+public class VentanaCilindro extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaCilindro.class.getName());
+
+    /**
+     * Creates new form VentanaCilindro
+     */
+    public VentanaCilindro() {
+        initComponents();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        radio = new javax.swing.JLabel();
+        altura = new javax.swing.JLabel();
+        campoRadio = new javax.swing.JTextField();
+        campoAltura = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
+        volumen = new javax.swing.JLabel();
+        superficie = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cilindro");
+
+        radio.setText("Radio");
+
+        altura.setText("Altura");
+
+        campoRadio.addActionListener(this::campoRadioActionPerformed);
+
+        campoAltura.addActionListener(this::campoAlturaActionPerformed);
+
+        calcular.setText("Calcular");
+        calcular.addActionListener(this::calcularActionPerformed);
+
+        volumen.setText("jLabel3");
+
+        superficie.setText("jLabel4");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(superficie, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volumen, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(campoAltura)
+                    .addComponent(campoRadio))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radio)
+                    .addComponent(campoRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(altura)
+                    .addComponent(campoAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(calcular)
+                .addGap(29, 29, 29)
+                .addComponent(volumen)
+                .addGap(18, 18, 18)
+                .addComponent(superficie)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    
+    boolean error = false;
+    double radio = 0;
+    double altura = 0;
+
+    try {
+
+        radio  = Double.parseDouble(campoRadio.getText());
+        altura  = Double.parseDouble(campoAltura.getText());
+        Cilindro cilindro = new Cilindro(radio, altura);
+
+        volumen.setText("Volumen (cm3): " + String.format("%.2f", 
+        cilindro.calcularVolumen()));
+        superficie.setText("Superficie (cm2): " + String.format("%.2f", 
+        cilindro.calcularSuperficie()));
+        } 
+        catch (Exception e){
+        error = true;
+    }                                        
+ }
+    
+    private void campoRadioActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void campoAlturaActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new VentanaCilindro().setVisible(true));
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JLabel altura;
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField campoAltura;
+    private javax.swing.JTextField campoRadio;
+    private javax.swing.JLabel radio;
+    private javax.swing.JLabel superficie;
+    private javax.swing.JLabel volumen;
+    // End of variables declaration                   
+}
+
+public class Pirámide extends FiguraGeométrica {
+        private double base;
+        private double altura;
+        private double apotema; 
+        
+        public Pirámide( double base, double altura, double apotema) {
+            this.base = base;
+            this.altura = altura;
+            this.apotema = apotema;
+            this.setVolumen(calcularVolumen());
+            this.setSuperficie(calcularSuperficie());
+        }
+        
+        
+        public double calcularVolumen() {
+            double volumen = (Math.pow(base, 2.0) * altura) / 3.0;
+            return volumen;
+        }
+        
+        public double calcularSuperficie() {
+            double áreaBase = Math.pow(base, 2.0);
+            double áreaLado = 2.0 * base * apotema;
+            return áreaBase + áreaLado;
+        }
+}
+
+public class Esfera extends FiguraGeométrica {
+    private double radio;
+
+    public Esfera(double radio) {
+        this.radio = radio;
+        this.setVolumen(calcularVolumen());
+        this.setSuperficie(calcularSuperficie());
+    }
+
+    public double calcularVolumen() {
+        double volumen = 1.333 * Math.PI * Math.pow(this.radio, 3.0);
+        return volumen;
+    }
+      
+    public double calcularSuperficie() {
+        double superficie = 4.0 * Math.PI * Math.pow(this.radio, 2.0);
+        return superficie;
+    }
+}
+
+public class Cilindro extends FiguraGeométrica{
+    private double radio;
+    private double altura;
+    
+    public Cilindro(double radio, double altura) {
+        this.radio = radio;
+        this.altura = altura;
+        this.setVolumen(calcularVolumen());
+        this.setSuperficie(calcularSuperficie());
+    }
+    
+    public double calcularVolumen() {
+        double volumen = Math.PI * altura * Math.pow(radio, 2.0);
+        return volumen;
+    }
+    
+    public double calcularSuperficie() {
+        double áreaLadoA = 2.0 * Math.PI * radio * altura;
+        double áreaLadoB = 2.0 * Math.PI * Math.pow(radio, 2.0);
+        return áreaLadoA + áreaLadoB;
+    }
+}
