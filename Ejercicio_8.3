@@ -9,7 +9,7 @@ public class Ejercicio8ResueltoN8{
     
 }
 
-ublic class FiguraGeométrica {
+public class FiguraGeométrica {
     private double volumen;
     private double superficie;
     
@@ -28,6 +28,7 @@ ublic class FiguraGeométrica {
     public double getSuperficie() {    
         return this.superficie;
     }
+}
 
 public class VentanaPrincipal extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
@@ -231,7 +232,33 @@ public class VentanaPiramide extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }
+private void calcularActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Piramide pirámide;
+        boolean error = false;
+        double base = 0;
+        double altura = 0;
+        double apotema = 0;
+        try {
+            base = Double.parseDouble(campoBase.getText());
+            altura = Double.parseDouble(campoAltura.getText());
+            apotema = Double.parseDouble(campoApotema.getText());
+            pirámide = new Pirámide(base, altura, apotema);
+            volumen.setText("Volumen (cm3): " + String.format("%.2f", pirámide.calcularVolumen()));
+            superficie.setText("Superficie (cm2): " + String.format("%.2f",pirámide.calcularSuperficie()));
+        } 
+        catch (Exception e) {
+            error = true; // Si ocurre una excepción
+        } 
+        
+        finally {
+            if (error) {
+JOptionPane.showMessageDialog(null, "Campo nulo o error en formato de número","Error",JOptionPane.ERROR_MESSAGE);
+}
+}
+}
+    }
+
      
     /**
       * 
